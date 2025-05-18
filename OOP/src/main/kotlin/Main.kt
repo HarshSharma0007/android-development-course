@@ -31,60 +31,43 @@ fun main(args: Array<String>){
 //    val user = User("Alex", "Dobinca", 23)
 //    val friend = User("KAndra", "Smith", 30)
 //    println("Name: ${friend.name}")
+///////////////////////////////////////////////////////
+//    val user = User(firstName = "Alex")
+//    val friend = User(firstName = "John", lastName = "Smith")
+//    val user2 = User(age = 19, firstName = "Ioana", lastName = "Dobbbi")
+//    println("${user.firstName}")
+//    println("${user.lastName}")
+//    println("${user.age}")
+//    println("\n")
+//    println("${friend.firstName}")
+//    println("${friend.lastName}")
+//    println("${friend.age}")
+////////////////////////////////////////////////
+//    val calculator = Calculator()
+//    calculator.sum(5,10)
+// if we want to create a class.method() instead of classObject.method()
+//    val result = Calculator.sum(5,10)
+//    Calculator.max
+//    println(result)
 
-    val user = User(firstName = "Alex")
-    val friend = User(firstName = "John", lastName = "Smith")
-    val user2 = User(age = 19, firstName = "Ioana", lastName = "Dobbbi")
-    println("${user.firstName}")
-    println("${user.lastName}")
-    println("${user.age}")
-    println("\n")
-    println("${friend.firstName}")
-    println("${friend.lastName}")
-    println("${friend.age}")
+///////***********************************************//////
+//    val instance = Database.getInstance()
+//    val instance2 = Database.getInstance()
+//    println(instance2)
+//    println(instance)
+
+    ////////////////////////////////////
+//    println(Database)
+//    println(Database)
+//    println(Database)
+//    println(Database)
+//    println(Database)
+
+
+
 
 }
 
 
 
-class User(firstName: String,var lastName: String = "LastName", var age: Int = 0){
-//    var name: String
-//    var lastName: String
-//
-//    init {
-//        if(name.lowercase().startsWith("a")){
-//            this.name = name
-//        }else{
-//            this.name = "User"
-//            println("This name don't Start with 'a' or 'a'")
-//        }
-//    }
-//    init {
-//        this.lastName = lastName
-//        println("lastname: ${this.lastName}")
-//    }
-/////////////////// Multiple init is good///////////
-/////////////////// Multiple constructor is Not good: use Parameterised Constructors///////////
 
-
-//    constructor(name: String): this(name, "LastName", 0){
-//        println("2nd")
-//    }
-//
-//    constructor(name: String,lastName: String): this(name, lastName, 0){
-//        println("3rd")
-//    }
-
-
-////////////getter & setter are implicitely defined in the kotlin //
-    var firstName = firstName
-//    get() = field
-    //or
-    get(){
-        return "FirstName: $field"
-    }
-    set(value){
-        println("$value was assigned tp first name propety.")
-        field = value
-    }
-}
