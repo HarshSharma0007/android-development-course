@@ -15,7 +15,7 @@ class Car(name: String, var model: String, var color: String, var doors: Int){
 
 
 
-class User(firstName: String,var lastName: String = "LastName", var age: Int = 0){
+// class User(firstName: String,var lastName: String = "LastName", var age: Int = 0){
 //    var name: String
 //    var lastName: String
 //
@@ -45,17 +45,31 @@ class User(firstName: String,var lastName: String = "LastName", var age: Int = 0
 
 
     ////////////getter & setter are implicitely defined in the kotlin //
-    var firstName = firstName
-        //    get() = field
-        //or
-        get(){
-            return "FirstName: $field"
-        }
-        set(value){
-            println("$value was assigned tp first name propety.")
-            field = value
-        }
-}
+//    var firstName = firstName
+//        //    get() = field
+//        //or
+//        get(){
+//            return "FirstName: $field"
+//        }
+//        set(value){
+//            println("$value was assigned tp first name propety.")
+//            field = value
+//        }
+//}
+
+//class User(firstName: String,var lastName: String = "LastName", var age: Int = 0){
+//    var firstName = firstName
+//        //    get() = field
+//        //or
+//        get(){
+//            return "FirstName: $field"
+//        }
+//        set(value){
+//            println("$value was assigned tp first name propety.")
+//            field = value
+//        }
+//}
+
 
 class Calculator() {
     companion object {
@@ -87,5 +101,11 @@ class Calculator() {
 object Database{
     init{
         println("Database created.")
+    }
+}
+
+class User(firstName: String,var lastName: String = "LastName", var age: Int = 0) {
+    init {
+        println("User $firstName was created.")
     }
 }

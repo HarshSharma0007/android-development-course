@@ -63,11 +63,27 @@ fun main(args: Array<String>){
 //    println(Database)
 //    println(Database)
 
+//    val user1 = User("Alex", "Dobbin", 23)
+////    val user2 = User("User", "lastName", 23)
+//    val user2 by lazy{
+//        User("User1", "lastname", 23)
+//    }
+// lazy:(initializer)
+// if you run it there will be no output for user2 from
+// the class but if you use it (user2 object) in main
+// class we will be able to see the user2's output
+// from class also.
 
 
 
 }
 
 
+enum class Direction{
+    NORTH,
+    SOUTH,
+    EAST,
+    WEST
+}
 
 
