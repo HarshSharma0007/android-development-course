@@ -109,3 +109,15 @@ class User(firstName: String,var lastName: String = "LastName", var age: Int = 0
         println("User $firstName was created.")
     }
 }
+
+
+enum class Direction(var direction : String, var distance: Int){
+    NORTH("north", 10),
+    SOUTH("south", 20),
+    EAST("east", 15),
+    WEST("west", 40);
+
+    fun printData(){
+        println("Direction $direction and distance : $distance")
+    }
+}

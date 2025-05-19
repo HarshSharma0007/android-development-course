@@ -109,18 +109,26 @@ fun main(args: Array<String>){
 //        }
 //
 //    }
+////////////////////////////////////////////////////
+    // innner class
+    val listView = LiveView(arrayOf("Name 1","Name 2","Name 3","Name 4"))
+
+    listView.ListViewItem().displayItem(2)
+
+
+
+
 }
 
 
-enum class Direction(var direction : String, var distance: Int){
-    NORTH("north", 10),
-    SOUTH("south", 20),
-    EAST("east", 15),
-    WEST("west", 40);
 
-    fun printData(){
-        println("Direction $direction and distance : $distance")
+class LiveView(val items: Array<String>){
+    inner class ListViewItem(){
+        fun displayItem(position: Int){
+            println(items[position])
+        }
     }
 }
+
 
 
