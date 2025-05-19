@@ -1,4 +1,4 @@
-class Car(name: String, var model: String, var color: String, var doors: Int){
+class Cars(name: String, var model: String, var color: String, var doors: Int){
     var name = name.trim()
 //    var model = model
 //    var color = color
@@ -129,3 +129,47 @@ class LiveView(val items: Array<String>){
         }
     }
 }
+
+class Account(val accountName: String){
+    // created a class with a default constructor as `accountName`
+    private var balance = 0     // initial balance of any object will be = 0
+    private var  transactions = mutableListOf<Int>()     // will have a mutable string for the transaction
+
+    fun deposit(amount: Int){
+        // we will allow for the positive deposit only
+        if(amount>0) {
+            transactions.add(amount)    // will append the transaction amount to the list.
+            balance += amount   // and update the balance of the given object
+            println(
+                "$amount Deposited. Balance is now ${this.balance}"
+            )
+        }else{
+            println("Cannot Deposit the negative Sums.")
+        }
+
+    }
+
+    fun withdraw(withdrawal: Int){
+        // for withdrawal we will allow only for the non-negative value withdrawal only
+        // therefore checking for only Negative(here we will take zero as negative)
+        if (-withdrawal<0){
+            transactions.add(-withdrawal)    // will append the transaction amount to the list.
+            this.balance += -withdrawal     // will deduct the withdrawalled amount from the ```balance of that object```.
+            println("$withdrawal Withdrawal. balance is now ${this.balance}")
+        }
+        else{
+            println("Cannot withdraw for the negative value.")
+        }
+    }
+
+    fun calculateBalance(): Int{
+        this.balance = 0
+        for (transaction in  transactions){
+            this.balance += transaction
+        }
+        return this.balance
+    }
+
+}
+
+
