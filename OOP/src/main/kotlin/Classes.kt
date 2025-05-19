@@ -264,7 +264,7 @@ class Car(name: String, color: String, val engines: Int, val doors: Int) : Vehic
 //    }
 //}
 // ???????????????OR?????????????????
-data class User(var firstName: String, var lastName: String, var age: Int)
+data class User2(var firstName: String, var lastName: String, var age: Int)
 
 
 //interface Engine {
@@ -299,3 +299,44 @@ data class User(var firstName: String, var lastName: String, var age: Int)
 //}
 
 
+
+class Button(val text: String, val id:Int, onClickListener:OnClickListener)
+
+class ClickListener(): OnClickListener{
+    override fun onClick() {
+
+    }
+}
+interface OnClickListener{
+    fun onClick()
+}
+
+//class App : A by FirstDelegate, B by SecondDelegate() P {
+//    override fun print() {
+//
+//    }
+//
+//    override fun print2() {
+//
+//    }
+//}
+//
+//interface A {
+//    fun print()
+//}
+//
+//interface B {
+//    fun print2()
+//}
+//
+//open class FirstDelegate : A {
+//    override fun print() {
+//
+//    }
+//}
+//
+//open class SecondDelegate : B {
+//    override fun print2() {
+//
+//    }
+//}

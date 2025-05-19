@@ -1,3 +1,6 @@
+import kotlin.properties.ReadWriteProperty
+import kotlin.reflect.KProperty
+
 fun main(args: Array<String>) {
 //    val car1 = Car("   Tesla ","S Plaid","Red",4)
 ////    car1.name = "Tesla"
@@ -165,27 +168,51 @@ fun main(args: Array<String>) {
 //    println(user1)
 //    println(user2)
 //******************Interface********************
-//    val clickListener = clickListener()
-//    val loginButton = Button("Login", 1234, clickListener )
-    val loginButton = Button("Login", 1234, object : OnClickListener{
-        override fun onClick() {
-            // Login the User
-        }
-    })
-    val signUpButton = Button("Sign Up", 2313, object : OnClickListener{
-        override fun onClick() {
-            // SignUp the User
-        }
-    })
-}
+//   // val clickListener = clickListener()
+//   // val loginButton = Button("Login", 1234, clickListener )
+//    val loginButton = Button("Login", 1234, object : OnClickListener{
+//        override fun onClick() {
+//            // Login the User
+//        }
+//    })
+//    val signUpButton = Button("Sign Up", 2313, object : OnClickListener{
+//        override fun onClick() {
+//            // SignUp the User
+//        }
+//    })
 
-class Button(val text: String, val id:Int, onClickListener:OnClickListener)
 
-class ClickListener(): OnClickListener{
-    override fun onClick() {
-
+    val user = User()
+    with(user){
+        firstName = "Alex"
+        lastName = "Dobbin"
+    }
+    with(user){
+        println(firstName)
+        println(lastName)
     }
 }
-interface OnClickListener{
-    fun onClick()
+
+
+class User{
+    var firstName by FormalDelegate()
+    var lastName by FormalDelegate()
+}
+
+
+class FormalDelegate: ReadWriteProperty<Any?, String> {
+    private var formattedString: String = ""
+
+    override fun getValue(thisRef: Any?, property: KProperty<*>): String {
+        return formattedString
+    }
+    override fun setValue(
+        thisRef: Any?,
+        property: KProperty<*>,
+        value: String
+    ) {
+        formattedString = value.lowercase()
+
+
+    }
 }
