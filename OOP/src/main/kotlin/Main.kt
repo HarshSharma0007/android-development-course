@@ -133,37 +133,46 @@ fun main(args: Array<String>){
 //
 
 //******************INHERITANCE*********************************//
-    val car = Car("BMW", "red", 1,4)
-    val plane = Plane("Boeing", "White & blue", 4,4)
+//    val car = Car("BMW", "red", 1,4)
+//    val plane = Plane("Boeing", "White & blue", 4,4)
+//
+//    car.move()
+//    car.stop()
+//
+//    plane.move()
+//    plane.stop()
 
-    car.move()
-    car.stop()
+//******************Sealed Class***********************//
 
-    plane.move()
-    plane.stop()
+
+    val success = Result.Success("Success!")
+//    val erroe = Result.Error("Failed!")
+    val progress = Result.Progress("Progress!")
+//    success.showMessage()
+    getData(progress)
+
+
 }
-open class Vehicle(val name: String, val color: String){
-    open fun move(){
-        println("$name is moving.")
-    }
 
-    open fun stop(){
-        println("$name has stopped.")
+fun getData(result: Result){
+    when(result) {
+        is Result.Success -> result.showMessage()
+        is Result.Progress -> result.showMessage()
+        is Result.Error.NonRecoverableError -> result.showMessage()
+        is Result.Error.RecoverableError -> result.showMessage()
     }
 }
-class Car(name: String, color: String, val engines: Int, val doors: Int): Vehicle(name, color) {
 
-}
-
-class Plane(name: String, color: String, val engines: Int, val doors: Int): Vehicle(name, color) {
-    override fun move() {
-        super.move()
-        flying()
-
-
+// we do not used enum as it do not have
+// the properties for the following variables
+sealed class Result(val message: String){
+    fun showMessage(){
+        println("Result : $message")
     }
-
-    fun flying(){
-        println("The plane is Flying")
+    class Success(message: String): Result(message)
+    sealed class Error(message: String): Result(message){
+        class RecoverableError(exception: Exception, message: String): Error(message)
+        class NonRecoverableError(exception: Exception, message: String): Error(message)
     }
+    class Progress(message: String): Result(message)
 }
