@@ -172,29 +172,52 @@ class Account(val accountName: String){
 
 }
 
-open class Vehicle(val name: String, val color: String){
-    open fun move(){
-        println("$name is moving.")
+//open class Vehicle(val name: String, val color: String){
+//    open fun move(){
+//        println("$name is moving.")
+//    }
+//
+//    open fun stop(){
+//        println("$name has stopped.")
+//    }
+//}
+//class Car(name: String, color: String, val engines: Int, val doors: Int): Vehicle(name, color) {
+//
+//}
+//
+//class Plane(name: String, color: String, val engines: Int, val doors: Int): Vehicle(name, color) {
+//    override fun move() {
+//        super.move()
+//        flying()
+//
+//
+//    }
+//
+//    fun flying(){
+//        println("The plane is Flying")
+//    }
+//}
+////////////////////////////////////////////////////
+//fun getData(result: Result){
+//    when(result) {
+//        is Result.Success -> result.showMessage()
+//        is Result.Progress -> result.showMessage()
+//        is Result.Error.NonRecoverableError -> result.showMessage()
+//        is Result.Error.RecoverableError -> result.showMessage()
+//    }
+//}
+///////////////////////////////////////////////////
+// we do not used enum as it do not have
+// the properties for the following variables
+sealed class Result(val message: String){
+    fun showMessage(){
+        println("Result : $message")
     }
-
-    open fun stop(){
-        println("$name has stopped.")
+    class Success(message: String): Result(message)
+    sealed class Error(message: String): Result(message){
+        class RecoverableError(exception: Exception, message: String): Error(message)
+        class NonRecoverableError(exception: Exception, message: String): Error(message)
     }
-}
-class Car(name: String, color: String, val engines: Int, val doors: Int): Vehicle(name, color) {
-
-}
-
-class Plane(name: String, color: String, val engines: Int, val doors: Int): Vehicle(name, color) {
-    override fun move() {
-        super.move()
-        flying()
-
-
-    }
-
-    fun flying(){
-        println("The plane is Flying")
-    }
+    class Progress(message: String): Result(message)
 }
 
