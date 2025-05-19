@@ -1,4 +1,4 @@
-fun main(args: Array<String>){
+fun main(args: Array<String>) {
 //    val car1 = Car("   Tesla ","S Plaid","Red",4)
 ////    car1.name = "Tesla"
 ////    car1.model = "S Plaid"
@@ -75,7 +75,7 @@ fun main(args: Array<String>){
 // from class also.
 
 ////********************************************////
-    
+
 //    println(Direction.WEST)
 //    println(Direction.EAST)
 //    println(Direction.NORTH)
@@ -89,7 +89,6 @@ fun main(args: Array<String>){
 //    println(Direction.NORTH.distance)
 //    println(Direction.NORTH.name)
 //    Direction.WEST.printData()
-
 
 
 //    val direction = Direction.EAST
@@ -152,26 +151,47 @@ fun main(args: Array<String>){
 //    getData(progress)
 
 //******************Abstract Class***********************//
-
-
-
-
+//    val name1 = "Alex"
+//    val name2 = "Alex"
+//
+//    println(name2==name1)// equating operator
+//    println(name2===name2) // referential equationg operator
+//
+//******************Equality Operators********************
+    val user1 = User("Alex", "Dobbin", 5)
+    val user2 = User("Alex", "Dobbin", 5)
+    // println(user1 == user2) // false SINCE
+    println(user1.equals(user2))
+    println(user1)
+    println(user2)
 
 }
 
-abstract class Vehicle(){
 
-
-    abstract fun move()
-    abstract fun stop()
-}
-class Car(name: String, color: String, val engines: Int, val doors: Int) :Vehicle(){
-    override fun move(){
-
-    }
-
-    override fun stop() {
-
-    }
-}
-
+//class User(var firstName: String, var lastName: String, var age: Int)
+//
+//{
+//    override fun equals(other: Any?): Boolean {
+////        return super.equals(other)
+//        if (this === other) {
+//            return true
+//        }
+//        if (other is User) {
+//            return this.firstName == other.firstName
+//                    && this.lastName == other.lastName
+//                    && this.age == other.age
+//
+//        }
+//        return false
+//    }
+//// if you override the .equals than you have to override the .hashcode also.
+//    override fun hashCode(): Int {
+//        return 0
+//    }
+//
+//    override fun toString(): String {
+//        return "User(Fname='$firstName', lastname= '$lastName', age='$age'"
+//    }
+//}
+// ???????????????OR?????????????????
+data class User(var firstName: String, var lastName: String, var age: Int)
