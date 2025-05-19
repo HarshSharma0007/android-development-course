@@ -121,3 +121,11 @@ enum class Direction(var direction : String, var distance: Int){
         println("Direction $direction and distance : $distance")
     }
 }
+
+class LiveView(val items: Array<String>){
+    inner class ListViewItem(){
+        fun displayItem(position: Int){
+            println(items[position])
+        }
+    }
+}
