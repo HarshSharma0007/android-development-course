@@ -74,16 +74,53 @@ fun main(args: Array<String>){
 // class we will be able to see the user2's output
 // from class also.
 
+////********************************************////
+    
+//    println(Direction.WEST)
+//    println(Direction.EAST)
+//    println(Direction.NORTH)
+//    println(Direction.SOUTH)
+
+//    for (direction in Direction.values()) {
+//        println(direction)
+//    }
+
+//    println(Direction.NORTH.direction)
+//    println(Direction.NORTH.distance)
+//    println(Direction.NORTH.name)
+//    Direction.WEST.printData()
 
 
+
+//    val direction = Direction.EAST
+//    val direction = Direction.valueOf("east".uppercase())
+//    when(direction){
+//        Direction.EAST -> {
+//            println("the east")
+//        }
+//        Direction.WEST -> {
+//            println("the west")
+//        }
+//        Direction.NORTH -> {
+//            println("the north")
+//        }
+//        Direction.SOUTH -> {
+//            println("the south")
+//        }
+//
+//    }
 }
 
 
-enum class Direction{
-    NORTH,
-    SOUTH,
-    EAST,
-    WEST
+enum class Direction(var direction : String, var distance: Int){
+    NORTH("north", 10),
+    SOUTH("south", 20),
+    EAST("east", 15),
+    WEST("west", 40);
+
+    fun printData(){
+        println("Direction $direction and distance : $distance")
+    }
 }
 
 
