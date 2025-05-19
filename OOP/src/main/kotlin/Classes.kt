@@ -265,3 +265,37 @@ class Car(name: String, color: String, val engines: Int, val doors: Int) : Vehic
 //}
 // ???????????????OR?????????????????
 data class User(var firstName: String, var lastName: String, var age: Int)
+
+
+//interface Engine {
+//    fun startEngine()
+//
+//}
+//
+//class Car(val name:String, val color: String):Engine {
+//    override fun startEngine(){
+//        println("The car is starting the end.")
+//
+//    }
+//}
+//
+//class Truck (val name: String, val color: String): Engine{
+//    override fun startEngine() {
+//        println("The truck is starting the end.")
+//
+//    }
+//}
+//
+//class Plane(val name: String, val color: String ): Engine{
+//    override fun startEngine() {
+//        println("The plane is starting the end.")
+//    }
+//}
+//
+//class Tesla (val name: String, val color: String): Engine{
+//    override fun startEngine() {
+//        println("The tesla is starting the engine.")
+//    }
+//}
+
+

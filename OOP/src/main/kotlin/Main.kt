@@ -165,38 +165,27 @@ fun main(args: Array<String>) {
 //    println(user1)
 //    println(user2)
 //******************Interface********************
-
-
+//    val clickListener = clickListener()
+//    val loginButton = Button("Login", 1234, clickListener )
+    val loginButton = Button("Login", 1234, object : OnClickListener{
+        override fun onClick() {
+            // Login the User
+        }
+    })
+    val signUpButton = Button("Sign Up", 2313, object : OnClickListener{
+        override fun onClick() {
+            // SignUp the User
+        }
+    })
 }
 
+class Button(val text: String, val id:Int, onClickListener:OnClickListener)
 
-interface Engine {
-    fun startEngine()
-
-}
-
-class Car(val name:String, val color: String):Engine {
-    override fun startEngine(){
-        println("The car is starting the end.")
+class ClickListener(): OnClickListener{
+    override fun onClick() {
 
     }
 }
-
-class Truck (val name: String, val color: String): Engine{
-    override fun startEngine() {
-        println("The truck is starting the end.")
-
-    }
-}
-
-class Plane(val name: String, val color: String ): Engine{
-    override fun startEngine() {
-        println("The plane is starting the end.")
-    }
-}
-
-class Tesla (val name: String, val color: String): Engine{
-    override fun startEngine() {
-        println("The tesla is starting the engine.")
-    }
+interface OnClickListener{
+    fun onClick()
 }
