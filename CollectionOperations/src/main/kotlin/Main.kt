@@ -61,4 +61,7 @@ fun main() {
 
     println(match)
     println(rest)
+    println(numbers.any{it.endsWith("e")})
+    println(numbers.none{it.endsWith("w")})
+    println(numbers.all{it.length > 1})
 }
